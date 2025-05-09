@@ -13,6 +13,7 @@ session_destroy();
     <div id="naslov">
         <h1>GAMBLING ROOM</h1>
     </div>
+    
 
     <form action="igra.php" method="GET">
         <div id="osnovaOkno">

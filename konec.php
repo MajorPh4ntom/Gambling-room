@@ -13,6 +13,14 @@ function rollOneRound($dice) {
     $_SESSION['players'] = $players;
 }
 
+function calculateTotalPoints($player) {
+    $totalPoints = 0;
+    foreach ($player['rolls'] as $round) {
+        $totalPoints += array_sum($round); // Sum all dice results for each round
+    }
+    return $totalPoints;
+}
+
 // Set up the game from GET data, only if it's the first time coming to the page
 if (isset($_GET['fname1']) && !isset($_SESSION['players'])) {
     $_SESSION['fname1'] = $_GET['fname1'];
@@ -38,21 +46,34 @@ if (isset($_POST['reroll'])) {
         $_SESSION['current_round']++;
     }
 }
+
+if ($_SESSION['current_round'] === $_SESSION['rounds']) {
+    // Calculate the total points for each player
+    $playersPoints = [];
+    foreach ($_SESSION['players'] as $i => $player) {
+        $playersPoints[$i] = [
+            'name' => $player['name'],
+            'points' => calculateTotalPoints($player)
+        ];
+    }
+
+    // Sort players by points, descending order
+    usort($playersPoints, function($a, $b) {
+        return $b['points'] - $a['points']; // Sort in descending order
+    });
+}
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GAMBLING</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .dice {
-            margin-right: 5px;
-            font-size: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS -->
 </head>
 <body>
+
     <div id="naslov">
         <h1>GAMBLING</h1>
     </div>
@@ -72,6 +93,17 @@ if (isset($_POST['reroll'])) {
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
+
+        <?php if ($_SESSION['current_round'] === $_SESSION['rounds']): ?>
+            <div class="podium">
+                <?php foreach ($playersPoints as $index => $player): ?>
+                    <div class="place <?php echo $index == 0 ? 'first' : ($index == 1 ? 'second' : 'third'); ?>">
+                        <h2><?= $player['name'] ?></h2>
+                        <p>Points: <?= $player['points'] ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div id="osnovaOkno" style="margin-top: 20px;">
@@ -85,7 +117,7 @@ if (isset($_POST['reroll'])) {
         <form action="konec.php" style="margin-left: 10px;">
             <input type="submit" id="gumbGremo" value="Back to Start" style="width: 150px;">
         </form>
-
     </div>
+
 </body>
 </html>
