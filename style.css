@@ -1,10 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 @font-face{
     font-family: gamblingFont;
     src: url(fonts/JqkasWild.ttf);
 }
 
 body{
+    height: 100%;
     background-image: url(img/ozadje.jpg);
+    background-repeat: repeat;
     font-family: gamblingFont;
     font-size: 20px;
 }
@@ -29,25 +36,31 @@ h1{
     justify-content: center;
 }
 
-#osnovaOkno{
+#osnovaOkno {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: -50px;
+    gap: 40px;
+    padding: 20px;
+    margin-top: 30px;
 }
 
-#osnova{
-    background-color: gray;
+.osnova {
+    background-color: #808080;
     color: white;
-    width: 200px;
-    height: 100px;
-    padding: 20px;
+    width: 220px; /* fixed box width */
+    min-height: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
-    margin-top: 50px;
-    margin-left: 50px;
-    display: inline-block;
     border-radius: 20px;
-    border: 3px black solid;
+    border: 3px solid black;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    flex: 0 0 auto; /* prevent boxes from stretching */
 }
+
+
 
 .vnosnaPolja{
     border-radius: 10px;
@@ -55,6 +68,30 @@ h1{
     height: 20px;
 }
 
+.vnosnaPolja2{
+    border-radius: 10px;
+    border: solid 1px black;
+    height: 20px;
+    margin-top: 5px;
+}
+
 .imena{
     margin-top: 15px;
+}
+
+#gumbGremo{
+    margin-top: 20px;
+    width: 60px;
+    border-radius: 20px;
+    border: solid black 3px;
+    background-color: #808080;
+    font-family: gamblingFont;
+    font-size: 20px;
+    width: 80px;
+    transition: 0.3s;
+}
+#gumbGremo:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: #616161;
 }
