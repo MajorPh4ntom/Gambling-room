@@ -13,7 +13,7 @@ function rollOneRound($dice) {
     $_SESSION['players'] = $players;
 }
 
-// Set up the game from GET data, only if it's the first time coming to the page
+// nastavi igro preko get samo ce prides prvic na page
 if (isset($_GET['fname1']) && !isset($_SESSION['players'])) {
     $_SESSION['fname1'] = $_GET['fname1'];
     $_SESSION['lname1'] = $_GET['lname1'];
@@ -45,22 +45,16 @@ if (isset($_POST['reroll'])) {
 <head>
     <title>GAMBLING</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .dice {
-            margin-right: 5px;
-            font-size: 20px;
-        }
-    </style>
 </head>
 <body>
-    <div id="naslov">
+    <div id="name">
         <h1>GAMBLING</h1>
     </div>
 
-    <div id="osnovaOkno">
+    <div id="basic-window">
         <?php if (!empty($_SESSION['players'])): ?>
             <?php foreach ($_SESSION['players'] as $player): ?>
-                <div class="osnova">
+                <div class="basic">
                     <strong><?= htmlspecialchars($player['name']) ?></strong><br><br>
                     <?php foreach ($player['rolls'] as $index => $rolls): ?>
                         Round <?= $index + 1 ?>:
@@ -74,18 +68,21 @@ if (isset($_POST['reroll'])) {
         <?php endif; ?>
     </div>
 
-    <div id="osnovaOkno" style="margin-top: 20px;">
-        <?php if ($_SESSION['current_round'] < $_SESSION['rounds']): ?>
-            <form method="post">
-                <input type="submit" id="gumbGremo" name="reroll" value="Roll (<?= $_SESSION['current_round'] + 1 ?> of <?= $_SESSION['rounds'] ?>)" style="width: 200px;">
-            </form>
-        <?php else: ?>
-            <p style="font-weight: bold; color: green;">All rounds completed!</p>
-        <?php endif; ?>
-        <form action="konec.php" style="margin-left: 10px;">
-            <input type="submit" id="gumbGremo" value="Back to Start" style="width: 150px;">
-        </form>
+    <div id="basic-window" style="margin-top: 20px;">
+        <div class="button-wrapper">
+            <?php if ($_SESSION['current_round'] < $_SESSION['rounds']): ?>
+                <form method="post">
+                    <input type="submit" id="button-go" name="reroll" value="Roll (<?= $_SESSION['current_round'] + 1 ?> of <?= $_SESSION['rounds'] ?>)" style="width: 200px;">
+                </form>
+            <?php else: ?>
+                <p style="font-weight: bold; color: green;">All rounds completed!</p>
+            <?php endif; ?>
 
+            <form action="konec.php">
+                <input type="submit" id="button-go" value="Leaderboard" style="width: 150px;">
+            </form>
+        </div>
     </div>
+
 </body>
 </html>

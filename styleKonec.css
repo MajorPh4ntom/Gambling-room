@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+@font-face {
+    font-family: gamblingFont;
+    src: url(fonts/JqkasWild.ttf);
+}
+
+body {
+    height: 100%;
+    background-image: url(img/ozadje.jpg);
+    background-repeat: repeat;
+    font-family: gamblingFont;
+    font-size: 20px;
+}
+
+.page-title{
+    width: 470px;
+    margin: 50px auto 0 auto;
+    color: white;
+    font-size: 50px;
+    background-color: #616161;
+    box-shadow: 
+    10px 10px #363636,
+    -10px -10px #363636;
+    text-align: center;
+    user-select: none;
+    border: solid black 3px;
+    border-radius: 5px;
+}
+
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 60px;
+    height: 200px;
+}
+
+.place {
+    width: 220px;
+    border-radius: 0px 0px 20px 20px; 
+    background-color: #808080;
+    text-align: center;
+    border: solid black 3px;
+    padding-bottom: 10px;
+}
+
+.first {
+    height: 160px;
+}
+.second {
+    height: 130px;
+}
+.third {
+    height: 100px;
+}
+
+.label {
+    background-color: #616161;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+.info {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.scoreboard-title {
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+.scoreboard {
+    margin: 0 auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 18px;
+    width: 220px; 
+    background-color: #808080;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.scoreboard th,
+.scoreboard td {
+    padding: 10px 20px;
+}
+
+.reset-form {
+    margin-top: 40px;
+    text-align: center;
+}
+
+
+.reset-form button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #808080;
+    color: white;
+    border: 3px solid black;
+    font-family: gamblingFont;
+    transition: 0.3s;
+}
+
+.reset-form button:hover {
+    cursor: pointer;
+    background-color: #616161;
+    transition: 0.3s;
+}
