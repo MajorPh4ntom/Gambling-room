@@ -75,11 +75,11 @@ if (isset($_POST['reroll'])) {
                     <input type="submit" id="button-go" name="reroll" value="Roll (<?= $_SESSION['current_round'] + 1 ?> of <?= $_SESSION['rounds'] ?>)" style="width: 200px;">
                 </form>
             <?php else: ?>
-                <p style="font-weight: bold; color: green;">All rounds completed!</p>
+                <p id="the-end-text">All rounds completed!</p>
             <?php endif; ?>
 
             <form action="konec.php">
-                <input type="submit" id="button-go" value="Leaderboard" style="width: 150px;">
+                <input type="submit" id="button-go" value="Leaderboard" style="width: 150px; <?php echo ($_SESSION['current_round'] < $_SESSION['rounds']) ? 'cursor: not-allowed;' : ''; ?>" <?php echo ($_SESSION['current_round'] < $_SESSION['rounds']) ? 'disabled' : ''; ?>>
             </form>
         </div>
     </div>
