@@ -32,19 +32,19 @@
 
 ## 🖼️ Slike
 
--Slika 1:
+- Slika 1:
 
 
 ![image](https://github.com/user-attachments/assets/528547d7-807b-42ab-beff-31e64d59f971)
 
 
--Slika 2:
+- Slika 2:
 
 
 ![image](https://github.com/user-attachments/assets/7475fde9-c7d3-4cdb-81c3-c472238b035a)
 
 
--Slika 3:
+- Slika 3:
 
 
 ![image](https://github.com/user-attachments/assets/027b1cea-7975-42cc-951d-e3c4560e12a1)
