@@ -7,6 +7,7 @@ session_destroy();
 <head>
     <title>Gambling Room</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div id="name">
@@ -14,7 +15,7 @@ session_destroy();
     </div>
     
 
-    <form action="igra.php" method="GET">
+    <form id="gambling-form" action="igra.php" method="GET">
         <div id="basic-window">
             <div class="basic">
                 <label for="fname1" class="names">First name:</label><br>
@@ -60,5 +61,6 @@ session_destroy();
             </div>
         </div>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>

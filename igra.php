@@ -79,7 +79,7 @@ if (isset($_POST['reroll'])) {
             <?php endif; ?>
 
             <form action="konec.php">
-                <input type="submit" id="button-go" value="Leaderboard" style="width: 150px; <?php echo ($_SESSION['current_round'] < $_SESSION['rounds']) ? 'cursor: not-allowed;' : ''; ?>" <?php echo ($_SESSION['current_round'] < $_SESSION['rounds']) ? 'disabled' : ''; ?>>
+                <input type="submit" id="button-go" value="Leaderboard" style=" <?php echo ($_SESSION['current_round'] < $_SESSION['rounds']) ? 'cursor: not-allowed;' : ''; ?>" <?php echo ($_SESSION['current_round'] < $_SESSION['rounds']) ? 'disabled' : ''; ?>>
             </form>
         </div>
     </div>
