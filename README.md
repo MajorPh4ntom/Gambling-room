@@ -15,20 +15,17 @@
 
 ## 🛠️ Tehnologije
 
-- **HTML5** – za strukturo strani  
-- **CSS3** – za oblikovanje (z uporabo Flexboxa in senc)  
-- **JavaScript** – za preverjanje podatkov in interakcijo  
-- **SweetAlert2** – za prijaznejša opozorila uporabniku  
-- **PHP** – za začetno obravnavo sej in podatkov
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **SweetAlert2**
+- **PHP**
 
 ---
 
 ## ℹ️ Opombe
 
-- Preverjanje imen poteka na strani odjemalca, kar pomeni, da se prepreči nadaljevanje igre, če se katerikoli dve imeni ujemata (ime + priimek).
-- Spletna aplikacija je primerna za uporabo na namiznih računalnikih in tablicah.
+- Preverjanje imen poteka na strani odjemalca, kar pomeni, da se prepreči nadaljevanje igre, če se katerikoli dve imeni ujemata .
 - Oblikovanje je zasnovano tematsko, da ustreza igralniškemu vzdušju.
 
 ---
-
-Uživaj v igri! 🎉
