@@ -139,3 +139,36 @@ body {
   background: linear-gradient(135deg, #888, #555);
   transform: scale(1.05);
 }
+
+.inline-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: -100px;
+}
+
+.scoreboard-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreboard img {
+  max-width: 50px; 
+  z-index: 10;
+}
+
+.scoreboard .left-gif {
+  left: -60px; 
+}
+
+.scoreboard .right-gif {
+  right: -60px; 
+}
+
+#inlineDisplay {
+  display: inline-block;
+  max-width: 80%; 
+}

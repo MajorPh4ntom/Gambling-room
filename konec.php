@@ -54,21 +54,31 @@ usort($players, fn($a, $b) => $b['total'] - $a['total']);
     </div>
 
     <h2 class="scoreboard-title">Final Scores</h2>
-    <table class="scoreboard">
-        <tr class="tr-custom-borders">
-            <th>Player</th>
-            <th>Total Points</th>
-        </tr>
-        <?php foreach ($players as $p): ?>
-            <tr>
-                <td><?= htmlspecialchars($p['name']) ?></td>
-                <td><?= $p['total'] ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+
+    <div class="inline-display">
+        <img src="img/ognjemet.gif" alt="Left Fireworks" class="left-gif">
+        <div id="inlineDisplay">
+            <table class="scoreboard">
+                <tr class="tr-custom-borders">
+                    <th>Player</th>
+                    <th>Total Points</th>
+                </tr>
+                <?php foreach ($players as $p): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($p['name']) ?></td>
+                        <td><?= $p['total'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+        <img src="img/ognjemet.gif" alt="Right Fireworks" class="right-gif">
+    </div>
+
+    <p id="count-down">Returning to main menu in 10s</p>
 
     <form method="post" action="index.php" class="reset-form">
         <button type="submit">Play Again</button>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>
